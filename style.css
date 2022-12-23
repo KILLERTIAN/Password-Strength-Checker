@@ -1,0 +1,29 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+.container{
+    position: relative;
+    width: 400px;
+    padding: 30px;
+    background: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: 1px solid #111;
+    gap: 10px;
+    padding-bottom: 70px;
+    -webkit-box-reflect: below 1px linear-gradient(transparent,transparent,#0005);
+}
+.container h2{
+    color:#666;
+    font-weight: 500;
+}
