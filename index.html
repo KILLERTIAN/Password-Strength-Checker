@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Password Strength Checker</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="lock-alt-solid-24.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&family=Poppins&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
@@ -36,25 +38,26 @@
             }
             return i;
         }
+
         let container = document.querySelector('.container');
         document.addEventListener("keyup",function(e){
             let password = document.querySelector('#myPassword').value;
 
             let strength = Strength(password);
             if(strength <=2){
-                container.classlist.add('weak');
-                container.classlist.remove('medium');
-                container.classlist.remove('strong');
+                container.classList.add('weak');
+                container.classList.remove('medium');
+                container.classList.remove('strong');
             }
-            else if(strength >=2 && strength>=4){
-                container.classlist.add('medium');
-                container.classlist.remove('weak');
-                container.classlist.remove('strong');
+            else if(strength >=2 && strength<=4){
+                container.classList.add('medium');
+                container.classList.remove('weak');
+                container.classList.remove('strong');
             }
             else{
-                container.classlist.add('strong');
-                container.classlist.remove('weak');
-                container.classlist.remove('medium');
+                container.classList.add('strong');
+                container.classList.remove('weak');
+                container.classList.remove('medium');
             }
         })
 
@@ -64,7 +67,7 @@
         show.onclick = function(){
             if(pswrd.type === 'password'){
                 pswrd.setAttribute('type','text');
-                show.classlist.add('hide');
+                show.classList.add('hide');
             }
             else{
                 pswrd.setAttribute('type','password');
